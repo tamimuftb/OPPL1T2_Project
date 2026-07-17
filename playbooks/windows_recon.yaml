@@ -1,0 +1,77 @@
+playbook_name: Windows Full Reconnaissance
+target_os: windows
+description: Windows system enumeration via SSH (OpenSSH must be running on target)
+
+techniques:
+
+  - name: Current User
+    mitre_id: T1033
+    type: shell_command
+    parameters:
+      command: "whoami /all"
+
+  - name: System Information
+    mitre_id: T1082
+    type: shell_command
+    parameters:
+      command: "systeminfo | findstr /C:\"OS Name\" /C:\"OS Version\" /C:\"System Type\" /C:\"Total Physical\""
+
+  - name: Hostname
+    mitre_id: T1082
+    type: shell_command
+    parameters:
+      command: "hostname"
+
+  - name: Network Configuration
+    mitre_id: T1016
+    type: shell_command
+    parameters:
+      command: "ipconfig /all"
+
+  - name: Active Connections
+    mitre_id: T1049
+    type: shell_command
+    parameters:
+      command: "netstat -ano"
+
+  - name: Running Processes
+    mitre_id: T1057
+    type: process_enum
+    parameters:
+      os: windows
+
+  - name: Local Users
+    mitre_id: T1087
+    type: user_enum
+    parameters:
+      os: windows
+
+  - name: Local Administrators
+    mitre_id: T1069
+    type: shell_command
+    parameters:
+      command: "net localgroup administrators"
+
+  - name: Scheduled Tasks
+    mitre_id: T1053
+    type: shell_command
+    parameters:
+      command: "schtasks /query /fo LIST /v 2>nul | findstr /C:\"Task Name\" | head -20"
+
+  - name: Installed Software
+    mitre_id: T1518
+    type: shell_command
+    parameters:
+      command: "wmic product get name,version 2>nul | head -20"
+
+  - name: Firewall Status
+    mitre_id: T1562
+    type: shell_command
+    parameters:
+      command: "netsh advfirewall show allprofiles state 2>nul"
+
+  - name: Write Test File
+    mitre_id: T1565
+    type: shell_command
+    parameters:
+      command: "echo sentinel-red-probe > C:\\Windows\\Temp\\sr_test.txt && type C:\\Windows\\Temp\\sr_test.txt"

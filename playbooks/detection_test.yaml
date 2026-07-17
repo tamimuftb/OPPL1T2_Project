@@ -1,0 +1,36 @@
+playbook_name: Detection Simulation Test
+target_os: linux
+description: Tests suspicious commands to verify detection logic in the report
+
+techniques:
+
+  - name: Normal System Check
+    mitre_id: T1082
+    type: shell_command
+    parameters:
+      command: "uname -a"
+
+  - name: Suspicious Base64 Decode Attempt
+    mitre_id: T1059
+    type: shell_command
+    parameters:
+      command: "echo dGVzdA== | base64 -d"
+
+  - name: Malicious File Write Simulation
+    mitre_id: T1565
+    type: file_modification
+    parameters:
+      file: /tmp/.sr_detection_test
+      content: "malicious payload test"
+
+  - name: Normal File Listing
+    mitre_id: T1083
+    type: shell_command
+    parameters:
+      command: "ls /tmp"
+
+  - name: Suspicious Outbound Attempt (curl http)
+    mitre_id: T1071
+    type: shell_command
+    parameters:
+      command: "echo 'would curl http://c2server but blocked'"

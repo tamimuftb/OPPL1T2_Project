@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/kali/sentinel-red/build/cmake_install.cmake",
+		"/home/kali/sentinel-red/build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

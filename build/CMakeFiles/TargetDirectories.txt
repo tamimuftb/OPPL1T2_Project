@@ -1,0 +1,5 @@
+/home/kali/sentinel-red/build/CMakeFiles/edit_cache.dir
+/home/kali/sentinel-red/build/CMakeFiles/rebuild_cache.dir
+/home/kali/sentinel-red/build/src/CMakeFiles/sentinel-red.dir
+/home/kali/sentinel-red/build/src/CMakeFiles/edit_cache.dir
+/home/kali/sentinel-red/build/src/CMakeFiles/rebuild_cache.dir

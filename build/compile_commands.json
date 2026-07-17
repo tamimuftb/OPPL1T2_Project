@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/main.cpp.o -c /home/kali/sentinel-red/src/main.cpp",
+  "file": "/home/kali/sentinel-red/src/main.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/main.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/LocalExecutor.cpp.o -c /home/kali/sentinel-red/src/LocalExecutor.cpp",
+  "file": "/home/kali/sentinel-red/src/LocalExecutor.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/LocalExecutor.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/RemoteSSHExecutor.cpp.o -c /home/kali/sentinel-red/src/RemoteSSHExecutor.cpp",
+  "file": "/home/kali/sentinel-red/src/RemoteSSHExecutor.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/RemoteSSHExecutor.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/ShellTechnique.cpp.o -c /home/kali/sentinel-red/src/ShellTechnique.cpp",
+  "file": "/home/kali/sentinel-red/src/ShellTechnique.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/ShellTechnique.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/FileModificationTechnique.cpp.o -c /home/kali/sentinel-red/src/FileModificationTechnique.cpp",
+  "file": "/home/kali/sentinel-red/src/FileModificationTechnique.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/FileModificationTechnique.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/NetworkScanTechnique.cpp.o -c /home/kali/sentinel-red/src/NetworkScanTechnique.cpp",
+  "file": "/home/kali/sentinel-red/src/NetworkScanTechnique.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/NetworkScanTechnique.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/ProcessEnumTechnique.cpp.o -c /home/kali/sentinel-red/src/ProcessEnumTechnique.cpp",
+  "file": "/home/kali/sentinel-red/src/ProcessEnumTechnique.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/ProcessEnumTechnique.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/UserEnumTechnique.cpp.o -c /home/kali/sentinel-red/src/UserEnumTechnique.cpp",
+  "file": "/home/kali/sentinel-red/src/UserEnumTechnique.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/UserEnumTechnique.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/TechniqueFactory.cpp.o -c /home/kali/sentinel-red/src/TechniqueFactory.cpp",
+  "file": "/home/kali/sentinel-red/src/TechniqueFactory.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/TechniqueFactory.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/PlaybookEngine.cpp.o -c /home/kali/sentinel-red/src/PlaybookEngine.cpp",
+  "file": "/home/kali/sentinel-red/src/PlaybookEngine.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/PlaybookEngine.cpp.o"
+},
+{
+  "directory": "/home/kali/sentinel-red/build/src",
+  "command": "/usr/bin/c++  -I/home/kali/sentinel-red/src/../include -std=gnu++17 -Wall -Wextra -o CMakeFiles/sentinel-red.dir/HtmlReporter.cpp.o -c /home/kali/sentinel-red/src/HtmlReporter.cpp",
+  "file": "/home/kali/sentinel-red/src/HtmlReporter.cpp",
+  "output": "src/CMakeFiles/sentinel-red.dir/HtmlReporter.cpp.o"
+}
+]

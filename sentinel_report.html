@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sentinel-Red Report</title>
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--border:#30363d;--text:#c9d1d9;
+      --muted:#8b949e;--accent:#58a6ff;--red:#f85149;--green:#3fb950;
+      --yellow:#d29922;--red-bg:#1c0b0b;--grn-bg:#0b1c0d;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);
+     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,monospace;
+     line-height:1.6;padding:2rem;}
+.wrap{max-width:1000px;margin:0 auto;}
+header{border-bottom:1px solid var(--border);padding-bottom:1.5rem;margin-bottom:2rem;}
+h1{font-size:2rem;color:var(--accent);letter-spacing:-.5px;}
+.subtitle{color:var(--muted);font-size:.9rem;margin-top:.25rem;}
+.meta{display:flex;gap:2rem;flex-wrap:wrap;margin:1rem 0;font-size:.85rem;color:var(--muted);}
+.meta span b{color:var(--text);}
+.stats{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;
+      padding:1rem 1.5rem;min-width:130px;text-align:center;}
+.stat-n{font-size:2.2rem;font-weight:700;line-height:1;}
+.stat-l{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.3rem;}
+.blue{color:var(--accent);} .red{color:var(--red);} .green{color:var(--green);} .yellow{color:var(--yellow);}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:8px;
+      padding:1.25rem 1.5rem;margin-bottom:1rem;}
+.card.det{border-left:4px solid var(--red);background:var(--red-bg);}
+.card.ok {border-left:4px solid var(--green);background:var(--grn-bg);}
+.card-head{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-bottom:.5rem;}
+.card-head h3{font-size:1rem;color:var(--text);}
+.badge{font-size:.7rem;font-weight:700;padding:.15rem .55rem;border-radius:4px;}
+.badge.det{background:var(--red);color:#fff;}
+.badge.ok {background:var(--green);color:#000;}
+.mitre{font-size:.78rem;color:var(--accent);text-decoration:none;}
+.mitre:hover{text-decoration:underline;}
+pre{background:#010409;border:1px solid var(--border);border-radius:6px;
+    padding:.75rem 1rem;margin-top:.75rem;font-size:.78rem;
+    white-space:pre-wrap;word-break:break-all;color:#79c0ff;
+    max-height:280px;overflow-y:auto;}
+footer{margin-top:3rem;text-align:center;font-size:.8rem;color:var(--muted);
+       border-top:1px solid var(--border);padding-top:1rem;}
+</style>
+</head>
+<body><div class="wrap">
+<header>
+  <h1>&#x1F534; Sentinel-Red</h1>
+  <div class='subtitle'>Automated TTP Emulation Campaign Report</div>
+  <div class='meta'>
+    <span><b>Playbook:</b> </span>
+    <span><b>Target OS:</b> </span>
+    <span><b>Target Host:</b> 192.168.0.201</span>
+    <span><b>Run Time:</b> 2026-06-16 15:39:01</span>
+  </div>
+</header>
+
+<div class='stats'>
+  <div class='stat'><div class='stat-n blue'>12</div><div class='stat-l'>Total</div></div>
+  <div class='stat'><div class='stat-n green'>12</div><div class='stat-l'>Clean</div></div>
+  <div class='stat'><div class='stat-n red'>0</div><div class='stat-l'>Detected</div></div>
+  <div class='stat'><div class='stat-n yellow'>0%</div><div class='stat-l'>Detection Rate</div></div>
+</div>
+
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Current User</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1033' target='_blank'>T1033 &#8599;</a>
+  </div>
+  <pre>
+USER INFORMATION
+----------------
+
+User Name                 SID                                           
+========================= ==============================================
+desktop-8hse8m6\anonymous S-1-5-21-1417384876-2255985362-1073076611-1001
+
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                                    Type             SID          Attributes                                                     
+============================================================= ================ ============ ===============================================================
+Everyone                                                      Well-known group S-1-1-0      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Local account and member of Administrators group Well-known group S-1-5-114    Mandatory group, Enabled by default, Enabled group             
+BUILTIN\Administrators                                        Alias            S-1-5-32-544 Mandatory group, Enabled by default, Enabled group, Group owner
+BUILTIN\Users                                                 Alias            S-1-5-32-545 Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\NETWORK                                          Well-known group S-1-5-2      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Authenticated Users                              Well-known group S-1-5-11     Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\This Organization                                Well-known group S-1-5-15     Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Local account                                    Well-known group S-1-5-113    Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\NTLM Authentication                              Well-known group S-1-5-64-10  Mandatory group, Enabled by default, Enabled group             
+Mandatory Label\High Mandatory Level                          Label            S-1-16-12288                                                                
+
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                            Description                                                        State  
+========================================= ================================================================== =======
+SeIncreaseQuotaPrivilege                  Adjust memory quotas for a process                                 Enabled
+SeSecurityPrivilege                       Manage auditing and security log                                   Enabled
+SeTakeOwnershipPrivilege                  Take ownership of files or other objects                           Enabled
+SeLoadDriverPrivilege                     Load and unload device drivers                                     Enabled
+SeSystemProfilePrivilege                  Profile system performance                                         Enabled
+SeSystemtimePrivilege                     Change the system time                                             Enabled
+SeProfileSingleProcessPrivilege           Profile single process                                             Enabled
+SeIncreaseBasePriorityPrivilege           Increase scheduling priority                                       Enabled
+SeCreatePagefilePrivilege                 Create a pagefile                                                  Enabled
+SeBackupPrivilege                         Back up files and directories                                      Enabled
+SeRestorePrivilege                        Restore files and directories                                      Enabled
+SeShutdownPrivilege                       Shut down the system                                               Enabled
+SeDebugPrivilege                          Debug programs                                                     Enabled
+SeSystemEnvironmentPrivilege              Modify firmware environment values                                 Enabled
+SeChangeNotifyPrivilege                   Bypass traverse checking                                           Enabled
+SeRemoteShutdownPrivilege                 Force shutdown from a remote system                                Enabled
+SeUndockPrivilege                         Remove computer from docking station                               Enabled
+SeManageVolumePrivilege                   Perform volume maintenance tasks                                   Enabled
+SeImpersonatePrivilege                    Impersonate a client after authentication                          Enabled
+SeCreateGlobalPrivilege                   Create global objects                                              Enabled
+SeIncreaseWorkingSetPrivilege             Increase a process working set                                     Enabled
+SeTimeZonePrivilege                       Change the time zone                                               Enabled
+SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Enabled
+SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Enabled
+
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>System Information</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1082' target='_blank'>T1082 &#8599;</a>
+  </div>
+  <pre>OS Name:                   Microsoft Windows 10 Home
+OS Version:                10.0.19045 N/A Build 19045
+System Type:               x64-based PC
+BIOS Version:              innotek GmbH VirtualBox, 12/1/2006
+Total Physical Memory:     2,048 MB
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Hostname</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1082' target='_blank'>T1082 &#8599;</a>
+  </div>
+  <pre>DESKTOP-8HSE8M6
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Network Configuration</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1016' target='_blank'>T1016 &#8599;</a>
+  </div>
+  <pre>
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : DESKTOP-8HSE8M6
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Intel(R) PRO/1000 MT Desktop Adapter
+   Physical Address. . . . . . . . . : 08-00-27-C1-80-E9
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::1731:7734:d51f:1282%6(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.0.201(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.255.0
+   Lease Obtained. . . . . . . . . . : Wednesday, June 17, 2026 1:04:10 AM
+   Lease Expires . . . . . . . . . . : Wednesday, June 17, 2026 3:04:09 AM
+   Default Gateway . . . . . . . . . : 192.168.0.1
+   DHCP Server . . . . . . . . . . . : 192.168.0.1
+   DHCPv6 IAID . . . . . . . . . . . : 101187623
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-31-97-E3-85-08-00-27-C1-80-E9
+   DNS Servers . . . . . . . . . . . : 192.168.0.1
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Active Connections</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1049' target='_blank'>T1049 &#8599;</a>
+  </div>
+  <pre>
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           PID
+  TCP    0.0.0.0:22             0.0.0.0:0              LISTENING       8320
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING       872
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:5040           0.0.0.0:0              LISTENING       1164
+  TCP    0.0.0.0:5357           0.0.0.0:0              LISTENING       4
+  TCP    0.0.0.0:49664          0.0.0.0:0              LISTENING       656
+  TCP    0.0.0.0:49665          0.0.0.0:0              LISTENING       496
+  TCP    0.0.0.0:49666          0.0.0.0:0              LISTENING       1032
+  TCP    0.0.0.0:49667          0.0.0.0:0              LISTENING       380
+  TCP    0.0.0.0:49668          0.0.0.0:0              LISTENING       1772
+  TCP    0.0.0.0:49669          0.0.0.0:0              LISTENING       640
+  TCP    0.0.0.0:49673          0.0.0.0:0              LISTENING       3116
+  TCP    192.168.0.201:22       192.168.0.116:37550    ESTABLISHED     8320
+  TCP    192.168.0.201:139      0.0.0.0:0              LISTENING       4
+  TCP    192.168.0.201:49731    4.213.25.240:443       ESTABLISHED     380
+  TCP    192.168.0.201:49908    4.213.25.240:443       ESTABLISHED     380
+  TCP    192.168.0.201:50065    23.55.235.73:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50066    23.55.235.73:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50067    23.11.39.161:80        CLOSE_WAIT      9192
+  TCP    192.168.0.201:50070    13.107.246.72:443      CLOSE_WAIT      9192
+  TCP    192.168.0.201:50071    23.55.235.73:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50072    23.55.235.81:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50073    23.55.235.73:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50074    23.55.235.73:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50075    23.55.235.73:443       CLOSE_WAIT      9192
+  TCP    192.168.0.201:50179    23.223.245.55:443      CLOSE_WAIT      4716
+  TCP    192.168.0.201:50185    23.223.245.49:443      CLOSE_WAIT      4716
+  TCP    192.168.0.201:50189    13.107.226.254:443     CLOSE_WAIT      4716
+  TCP    192.168.0.201:50241    199.232.214.172:80     ESTABLISHED     3172
+  TCP    [::]:22                [::]:0                 LISTENING       8320
+  TCP    [::]:135               [::]:0                 LISTENING       872
+  TCP    [::]:445               [::]:0                 LISTENING       4
+  TCP    [::]:5357              [::]:0                 LISTENING       4
+  TCP    [::]:49664             [::]:0                 LISTENING       656
+  TCP    [::]:49665             [::]:0                 LISTENING       496
+  TCP    [::]:49666             [::]:0                 LISTENING       1032
+  TCP    [::]:49667             [::]:0                 LISTENING       380
+  TCP    [::]:49668             [::]:0                 LISTENING       1772
+  TCP    [::]:49669             [::]:0                 LISTENING       640
+  TCP    [::]:49673             [::]:0                 LISTENING       3116
+  TCP    [::1]:42050            [::]:0                 LISTENING       5540
+  UDP    0.0.0.0:500            *:*                                    380
+  UDP    0.0.0.0:3702           *:*                                    4256
+  UDP    0.0.0.0:3702           *:*                                    7724
+  UDP    0.0.0.0:3702           *:*                                    4256
+  UDP    0.0.0.0:3702           *:*                                    7724
+  UDP    0.0.0.0:4500           *:*                                    380
+  UDP    0.0.0.0:5050           *:*                                    1164
+  UDP    0.0.0.0:5353           *:*                                    1280
+  UDP    0.0.0.0:5355           *:*                                    1280
+  UDP    0.0.0.0:51461          *:*                                    4256
+  UDP    0.0.0.0:56915          *:*                                    7724
+  UDP    127.0.0.1:1900         *:*                                    4256
+  UDP    127.0.0.1:57847        *:*                                    4256
+  UDP    127.0.0.1:58290        *:*                                    380
+  UDP    192.168.0.201:137      *:*                                    4
+  UDP    192.168.0.201:138      *:*                                    4
+  UDP    192.168.0.201:1900     *:*                                    4256
+  UDP    192.168.0.201:57846    *:*                                    4256
+  UDP    [::]:500               *:*                                    380
+  UDP    [::]:3702              *:*                                    7724
+  UDP    [::]:3702              *:*                                    7724
+  UDP    [::]:3702              *:*                                    4256
+  UDP    [::]:3702              *:*                                    4256
+  UDP    [::]:4500              *:*                                    380
+  UDP    [::]:5353              *:*                                    1280
+  UDP    [::]:5355              *:*                                    1280
+  UDP    [::]:51462             *:*                                    4256
+  UDP    [::]:56916             *:*                                    7724
+  UDP    [::1]:1900             *:*                                    4256
+  UDP    [::1]:57845            *:*                                    4256
+  UDP    [fe80::1731:7734:d51f:1282%6]:1900  *:*                                    4256
+  UDP    [fe80::1731:7734:d51f:1282%6]:57844  *:*                                    4256
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Running Processes</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1057' target='_blank'>T1057 &#8599;</a>
+  </div>
+  <pre>
+Image Name                     PID Session Name        Session#    Mem Usage Status          User Name                                              CPU Time Window Title                                                            
+========================= ======== ================ =========== ============ =============== ================================================== ============ ========================================================================
+System Idle Process              0 Services                   0          8 K Unknown         NT AUTHORITY\SYSTEM                                     1:32:10 N/A                                                                     
+System                           4 Services                   0        136 K Unknown         N/A                                                     0:01:14 N/A                                                                     
+Registry                        92 Services                   0     32,588 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:01 N/A                                                                     
+smss.exe                       316 Services                   0        316 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+csrss.exe                      424 Services                   0      3,244 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+wininit.exe                    496 Services                   0      3,128 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+csrss.exe                      508 Console                    1      3,992 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:23 N/A                                                                     
+winlogon.exe                   568 Console                    1      6,560 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+services.exe                   640 Services                   0      6,188 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:02 N/A                                                                     
+lsass.exe                      656 Services                   0     16,172 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:05 N/A                                                                     
+fontdrvhost.exe                752 Console                    1      5,276 K Unknown         Font Driver Host\UMFD-1                                 0:00:00 N/A                                                                     
+fontdrvhost.exe                760 Services                   0      2,212 K Unknown         Font Driver Host\UMFD-0                                 0:00:00 N/A                                                                     
+svchost.exe                    768 Services                   0     15,824 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:08 N/A                                                                     
+svchost.exe                    872 Services                   0     14,104 K Unknown         NT AUTHORITY\NETWORK SERVICE                            0:00:09 N/A                                                                     
+dwm.exe                        952 Console                    1     58,936 K Unknown         Window Manager\DWM-1                                    0:01:02 N/A                                                                     
+svchost.exe                    380 Services                   0     91,084 K Unknown         NT AUTHORITY\SYSTEM                                     0:01:32 N/A                                                                     
+svchost.exe                    612 Services                   0     51,132 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:40 N/A                                                                     
+svchost.exe                    412 Services                   0     25,228 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:03 N/A                                                                     
+svchost.exe                   1032 Services                   0     16,472 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:04 N/A                                                                     
+svchost.exe                   1164 Services                   0     15,772 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:03 N/A                                                                     
+svchost.exe                   1280 Services                   0     17,588 K Unknown         NT AUTHORITY\NETWORK SERVICE                            0:00:02 N/A                                                                     
+Memory Compression            1408 Services                   0     44,516 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:29 N/A                                                                     
+svchost.exe                   1524 Services                   0     12,488 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+svchost.exe                   1588 Services                   0      9,932 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+svchost.exe                   1604 Services                   0      8,432 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+svchost.exe                   1692 Services                   0     17,856 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:06 N/A                                                                     
+spoolsv.exe                   1772 Services                   0     11,412 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+svchost.exe                   1828 Services                   0     13,076 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:01 N/A                                                                     
+svchost.exe                   1988 Services                   0     39,444 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:09 N/A                                                                     
+MsMpEng.exe                   1500 Services                   0    107,468 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:58 N/A                                                                     
+svchost.exe                   2176 Services                   0     10,508 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+SearchIndexer.exe             2516 Services                   0     27,616 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:06 N/A                                                                     
+svchost.exe                   2920 Services                   0      7,584 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+svchost.exe                   3172 Services                   0     16,552 K Unknown         NT AUTHORITY\NETWORK SERVICE                            0:00:17 N/A                                                                     
+sihost.exe                    3752 Console                    1     16,988 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:04 N/A                                                                     
+svchost.exe                   3768 Console                    1     29,716 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:02 N/A                                                                     
+ctfmon.exe                    3956 Console                    1     11,812 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:04 N/A                                                                     
+taskhostw.exe                 3984 Console                    1     15,364 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+explorer.exe                  3696 Console                    1     95,172 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:20 N/A                                                                     
+svchost.exe                   4164 Console                    1     14,248 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+StartMenuExperienceHost.e     4508 Console                    1     31,264 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:01 N/A                                                                     
+RuntimeBroker.exe             4584 Console                    1     15,000 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:01 N/A                                                                     
+SearchApp.exe                 4716 Console                    1     75,156 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:29 N/A                                                                     
+RuntimeBroker.exe             4856 Console                    1     25,920 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:02 N/A                                                                     
+SkypeBackgroundHost.exe       4408 Console                    1        172 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+RuntimeBroker.exe             4404 Console                    1     24,780 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:01 N/A                                                                     
+SecurityHealthSystray.exe     2956 Console                    1      8,924 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+SecurityHealthService.exe     3028 Services                   0     17,476 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:01 N/A                                                                     
+OneDrive.exe                  3352 Console                    1     30,520 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:03 N/A                                                                     
+svchost.exe                   4256 Services                   0     10,316 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:01 N/A                                                                     
+ApplicationFrameHost.exe      1928 Console                    1     24,856 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:02 N/A                                                                     
+WinStore.App.exe              2552 Console                    1        260 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+RuntimeBroker.exe             4672 Console                    1      7,464 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+TextInputHost.exe              536 Console                    1      8,292 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+dllhost.exe                   1624 Console                    1     12,316 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+svchost.exe                   3116 Services                   0      7,052 K Unknown         NT AUTHORITY\NETWORK SERVICE                            0:00:00 N/A                                                                     
+mmc.exe                        780 Console                    1     16,184 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:04:09 N/A                                                                     
+SgrmBroker.exe                3408 Services                   0      6,292 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+svchost.exe                    168 Services                   0      9,888 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+svchost.exe                   1616 Services                   0     10,016 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+svchost.exe                   2636 Services                   0      7,488 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+ShellExperienceHost.exe       1424 Console                    1     30,272 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:01 N/A                                                                     
+RuntimeBroker.exe             1360 Console                    1     18,804 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+CredentialEnrollmentManag     3788 Console                    1      8,932 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+UserOOBEBroker.exe            5776 Console                    1      9,024 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+OneDrive.Sync.Service.exe     5540 Console                    1      4,500 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:02 N/A                                                                     
+svchost.exe                   5532 Console                    1      4,816 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+SystemSettingsAdminFlows.     3860 Console                    1      5,756 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+TrustedInstaller.exe          4600 Services                   0      4,672 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+TiWorker.exe                  5384 Services                   0     34,900 K Unknown         NT AUTHORITY\SYSTEM                                     0:01:24 N/A                                                                     
+SearchApp.exe                 3600 Console                    1     37,944 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+msedgewebview2.exe            4772 Console                    1     34,848 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:01 N/A                                                                     
+msedgewebview2.exe            1364 Console                    1     10,784 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+msedgewebview2.exe            3980 Console                    1     26,840 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+msedgewebview2.exe            4140 Console                    1     21,088 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+msedgewebview2.exe            6116 Console                    1      8,180 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+taskhostw.exe                 6560 Console                    1      6,856 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+SkypeApp.exe                  7296 Console                    1     26,100 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+dasHost.exe                   7724 Services                   0     10,620 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+msedgewebview2.exe            7612 Console                    1     48,900 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:01 N/A                                                                     
+RuntimeBroker.exe             8820 Console                    1     14,924 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+cmd.exe                       3480 Console                    1      4,384 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+conhost.exe                   8404 Console                    1     21,284 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+Maps.exe                      9192 Console                    1      1,460 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:04 N/A                                                                     
+RuntimeBroker.exe             7920 Console                    1     13,424 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+svchost.exe                   7848 Services                   0     18,456 K Unknown         NT AUTHORITY\NETWORK SERVICE                            0:00:01 N/A                                                                     
+MicrosoftEdgeUpdate.exe       7420 Services                   0      3,540 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+MicrosoftEdgeUpdate.exe       9004 Services                   0      9,780 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:09 N/A                                                                     
+MicrosoftEdgeUpdate.exe       2128 Services                   0     22,876 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:18 N/A                                                                     
+powershell.exe                7756 Console                    1     78,764 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:03 N/A                                                                     
+conhost.exe                   3648 Console                    1     20,248 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:04 N/A                                                                     
+osk.exe                       1440 Console                    1     24,928 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:05 N/A                                                                     
+svchost.exe                   9088 Services                   0      7,652 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+sshd.exe                      8320 Services                   0      7,920 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+sshd.exe                      6800 Services                   0      8,296 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+conhost.exe                   3156 Services                   0     13,716 K Unknown         NT AUTHORITY\SYSTEM                                     0:00:00 N/A                                                                     
+sshd.exe                      9080 Services                   0      8,612 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+cmd.exe                       5060 Services                   0      4,504 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+sftp-server.exe               3036 Services                   0      5,436 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+WmiPrvSE.exe                  6940 Services                   0     15,136 K Unknown         NT AUTHORITY\NETWORK SERVICE                            0:00:02 N/A                                                                     
+WmiPrvSE.exe                  8708 Services                   0      8,952 K Unknown         NT AUTHORITY\LOCAL SERVICE                              0:00:00 N/A                                                                     
+cmd.exe                       3248 Services                   0      4,508 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+tasklist.exe                  7964 Services                   0      9,120 K Unknown         DESKTOP-8HSE8M6\anonymous                               0:00:00 N/A                                                                     
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Local Users</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1087' target='_blank'>T1087 &#8599;</a>
+  </div>
+  <pre>
+User accounts for \\DESKTOP-8HSE8M6
+
+-------------------------------------------------------------------------------
+Administrator            anonymous                DefaultAccount           
+Guest                    sshd                     WDAGUtilityAccount       
+The command completed successfully.
+
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Local Administrators</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1069' target='_blank'>T1069 &#8599;</a>
+  </div>
+  <pre>Alias name     administrators
+Comment        Administrators have complete and unrestricted access to the computer/domain
+
+Members
+
+-------------------------------------------------------------------------------
+Administrator
+anonymous
+The command completed successfully.
+
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Scheduled Tasks</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1053' target='_blank'>T1053 &#8599;</a>
+  </div>
+  <pre>
+[STDERR]
+'head' is not recognized as an internal or external command,
+operable program or batch file.
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Installed Software</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1518' target='_blank'>T1518 &#8599;</a>
+  </div>
+  <pre>
+[STDERR]
+'head' is not recognized as an internal or external command,
+operable program or batch file.
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Firewall Status</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1562' target='_blank'>T1562 &#8599;</a>
+  </div>
+  <pre>
+Domain Profile Settings: 
+----------------------------------------------------------------------
+State                                 ON
+
+Private Profile Settings: 
+----------------------------------------------------------------------
+State                                 OFF
+
+Public Profile Settings: 
+----------------------------------------------------------------------
+State                                 OFF
+Ok.
+
+</pre>
+</div>
+<div class='card ok'>
+  <div class='card-head'>
+    <h3>Write Test File</h3>
+    <span class='badge ok'>CLEAN</span>
+    <a class='mitre' href='https://attack.mitre.org/techniques/T1565' target='_blank'>T1565 &#8599;</a>
+  </div>
+  <pre>sentinel-red-probe  
+</pre>
+</div>
+<footer>Sentinel-Red &mdash; Automated TTP Emulation Engine &mdash; For authorized security testing only</footer>
+</div></body></html>

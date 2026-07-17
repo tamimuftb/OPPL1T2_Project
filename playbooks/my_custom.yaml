@@ -1,0 +1,22 @@
+playbook_name: My Custom Playbook
+target_os: linux          # linux or windows
+description: What this does
+
+techniques:
+
+  - name: Check Who I Am
+    mitre_id: T1033
+    type: shell_command
+    parameters:
+      command: "whoami && id"
+
+  - name: List Processes
+    mitre_id: T1057
+    type: process_enum
+
+  - name: Drop a File
+    mitre_id: T1565
+    type: file_modification
+    parameters:
+      file: /tmp/test.txt
+      content: "hello from sentinel-red"
